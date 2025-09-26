@@ -13,7 +13,7 @@ while game_is_on:
     name = input("What is your name?: ")
     bid = int(input("What is your bid?: $"))
     bids[name] = bid
-    to_continue = input("Are there any other bidders? 'yes' or 'no': ")
+    to_continue = input("Are there any other bidders? 'yes' or 'no': ").lower()
     if to_continue == "no":
         game_is_on = False
     else:
