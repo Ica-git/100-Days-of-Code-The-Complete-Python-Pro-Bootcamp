@@ -79,10 +79,7 @@ while len(guessed_states) < 50:
         game_is_on = False
 
 
-to_learn = []
-for state in state_list:
-    if state not in guessed_states:
-        to_learn.append(state)
+to_learn = [state for state in state_list if state not in guessed_states]
 
 df = pandas.DataFrame(to_learn)
 df.to_csv("to_learn.csv")
