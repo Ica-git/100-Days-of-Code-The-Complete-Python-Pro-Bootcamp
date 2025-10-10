@@ -56,14 +56,23 @@ alfabet = {row.letter: row.code for index, row in df.iterrows()}
 # for (index, row) in df.iterrows():
 #     alfabet[row.letter] = row.code
 
-word = input("What is your word?: ").upper()
+def generate_phonetic():
+    word = input("What is your word?: ").upper()
 
-end_list = [alfabet[letter] for letter in word]
+    try:
+        end_list = [alfabet[letter] for letter in word]
+    except KeyError:
+        print("Sorry, only letters in alphabet please.")
+        generate_phonetic()
+    else:
+        print(end_list)
+
+generate_phonetic()
 
 # for letter in word:
 #     end_list.append(alfabet[letter])
 
-print(end_list)
+
 
 
 
